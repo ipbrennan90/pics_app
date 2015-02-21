@@ -1,4 +1,4 @@
-<h1> <%= @pic.name %> </h1>
+<h1> <%= @pic.title %> </h1>
 </br>
 <%= @pic.date %>
 </br>
@@ -6,4 +6,3 @@
 </br>
 <%= link_to "Edit", edit_pic_path(@pic) %> | <%= link_to "Delete", pic_path(@pic), method: :delete, data: {confirm: "Are you sure?"} %>
  | <%= link_to "Back", pics_path %>
- 

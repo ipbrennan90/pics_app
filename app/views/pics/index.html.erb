@@ -1,14 +1,16 @@
 <h1> Pics List </h1>
+</br>
+<%= link_to "New Pic", new_pic_path %>
 
-<%= @pics.each do |i| %>
+<%@pics.each do |i| %>
 
 </br>
-<p><strong> Date : </strong><%= i.date %></p>
+<p><strong> Date : </strong><%= i.date.strftime("%m/%d/%Y at %I:%M%p") %></p>
 </br>
-<p><strong> Name : </strong><%= i.name %></p>
+<p><strong> Title : </strong><%= i.title  %></p>
 </br>
 <p><strong> Description : </strong><%= i.description %></p>
 </br>
-<%= link_to "Edit", edit_pic_path(i) %> | <%= "Delete", pic_path(i), method: :delete, data: {confirm: "Are you sure"} %>
+<%= link_to "Edit", edit_pic_path(i) %> | <%=link_to "Delete", pic_path(i), method: :delete, data: {confirm: "Are you sure"} %>
 </br>
 <% end %>

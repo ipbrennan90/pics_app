@@ -1,4 +1,4 @@
-class PicsController < ApplicationController\
+class PicsController < ApplicationController
   before_action :set_pic, only: [:show, :edit, :update]
 
   def index
@@ -38,7 +38,7 @@ class PicsController < ApplicationController\
 
   def destroy
     pic= Pic.find(params[:id])
-    if @pic.destroy
+    if pic.destroy
       flash[:notice] = "Pic was deleted"
       redirect_to pics_path
     end
@@ -51,6 +51,6 @@ class PicsController < ApplicationController\
   end
 
   def pic_params
-    params.require(:pic).permit(:date, :name, :description)
+    params.require(:pic).permit(:date, :title, :description)
   end
  end

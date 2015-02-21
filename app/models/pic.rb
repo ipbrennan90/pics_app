@@ -1,5 +1,5 @@
 class Pic < ActiveRecord::Base
-  valiates :name, :date, :description, presence: true
-  vaidates :name, uniqueness: true
-  
+  validates :title, :date, :description, presence: true
+  validates :title, uniqueness: true
+
 end
