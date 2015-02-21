@@ -1,0 +1,14 @@
+<h1> Pics List </h1>
+
+<%= @pics.each do |i| %>
+
+</br>
+<p><strong> Date : </strong><%= i.date %></p>
+</br>
+<p><strong> Name : </strong><%= i.name %></p>
+</br>
+<p><strong> Description : </strong><%= i.description %></p>
+</br>
+<%= link_to "Edit", edit_pic_path(i) %> | <%= "Delete", pic_path(i), method: :delete, data: {confirm: "Are you sure"} %>
+</br>
+<% end %>
